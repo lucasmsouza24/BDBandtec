@@ -33,6 +33,9 @@ select modalidade, nome from atleta;
 -- exibir dados dos atletas que tenham 3 medalhas ou mais
 select * from atleta where qtd_medalha>=3;
 
+-- exibir dados dos atletas cujo id_atleta seja menor que um determinado numero
+select * from atleta where id_atleta < 5;
+
 -- exibir dados de atletas de uma determinada modalidade
 select * from atleta where modalidade = 'ginástica';
 
