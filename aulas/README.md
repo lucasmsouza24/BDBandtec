@@ -39,3 +39,11 @@ _ para ignorar 1 caractere
 ## UPDATE
 Alterando valores
 > UPDATE table SET colulmn = 'new_value' WHERE column = 'valor';
+
+## DELETE 
+Deletando registros
+> DELETE FROM table-name WHERE column = 'value';
+
+## DROP
+Apagando tabela
+> DROP TABLE table-name;
