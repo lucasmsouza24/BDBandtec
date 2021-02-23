@@ -2,16 +2,29 @@
 
 ## CREATE e USE
 
-Criação do Banco de Dados:
+### Criação do Banco de Dados:
 > CREATE database-name;
 
-Seleção do Banco de Dados:
+### Seleção do Banco de Dados:
 > USE database-name;
 
-Criação de Tabelas:
-> CREATE TABLE table-name( field-name1 type-field );
+### Criação de Tabelas:
+> CREATE TABLE table-name( 
+> field-name1 type-field 
+> );
 
 ## DESC
 
-Exibe descrição (estrutura) da tabela:
+### Exibe descrição (estrutura) da tabela:
 > DESC table-name;
+
+## SELECT
+
+### Estrutura Básica:  
+> SELECT columns FROM table-name;  
+
+### Cláusula WHERE:
+> SELECT columns FROM table-name WHERE logic-operation;
+
+### BETWEEN:
+> SELECT columns FROM table-name BETWEEN valu1 AND value2;
