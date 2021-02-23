@@ -10,7 +10,7 @@ Seleção do Banco de Dados:
 
 Criação de Tabelas:
 > CREATE TABLE table-name(  
-> ⋅⋅⋅field-name1 type-field,  
-> ⋅⋅⋅    field-name2 type-field,  
-> ⋅⋅⋅    ...
+field-name1 type-field,  
+field-name2 type-field,  
+...  
 >);
