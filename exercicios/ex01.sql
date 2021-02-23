@@ -40,4 +40,4 @@ select * from atleta where id_atleta < 5;
 select * from atleta where modalidade = 'ginástica';
 
 -- exibir os dados dos atletas cujo id_atleta esteja entre um valor e outro (ex: entre 3 e 7)
-select * from atleta where id_atleta >= 2 and id_atleta <= 4;
+select * from atleta where id_atleta between 2 and 4;
