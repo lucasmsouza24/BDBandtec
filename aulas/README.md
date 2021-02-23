@@ -10,3 +10,8 @@ Seleção do Banco de Dados:
 
 Criação de Tabelas:
 > CREATE TABLE table-name( field-name1 type-field );
+
+## DESC
+
+Exibe descrição (estrutura) da tabela:
+> DESC table-name;
