@@ -23,7 +23,7 @@
 ### Estrutura Básica:  
 > SELECT columns FROM table-name;  
 
-### Cláusula WHERE:
+### WHERE:
 > SELECT columns FROM table-name WHERE logic-operation;
 
 ### BETWEEN:
