@@ -28,3 +28,6 @@
 
 ### BETWEEN:
 > SELECT columns FROM table-name WHERE column BETWEEN value1 AND value2;
+
+### LIKE:
+> SELECT columns FROM table-name WHERE colum LIKE '%value%';
