@@ -27,4 +27,4 @@
 > SELECT columns FROM table-name WHERE logic-operation;
 
 ### BETWEEN:
-> SELECT columns FROM table-name BETWEEN valu1 AND value2;
+> SELECT columns FROM table-name WHERE column BETWEEN value1 AND value2;
