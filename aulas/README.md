@@ -47,3 +47,13 @@ Deletando registros
 ## DROP
 Apagando tabela
 > DROP TABLE table-name;
+
+## FOREIGN KEY
+~~~mysql
+CREATE TABLE table1(
+    ...
+    column1 INT,
+    FOREIGN KEY (column) REFERENCES table2(column2)
+    ...
+);
+~~~
