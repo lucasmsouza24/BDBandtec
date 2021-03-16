@@ -3,50 +3,74 @@
 ## CREATE e USE
 
 ### Criação do Banco de Dados
-> CREATE database-name;
+~~~mysql
+CREATE database-name;
+~~~
 
 ### Seleção do Banco de Dados
-> USE database-name;
+~~~mysql
+USE database-name;
+~~~
 
 ### Criação de Tabelas
-> CREATE TABLE table-name( 
-> field-name1 type-field 
-> );
+~~~mysql
+CREATE TABLE table-name( 
+    field-name1 type-field 
+);
+~~~
 
 ## DESC
 
 ### Exibe descrição (estrutura) da tabela
-> DESC table-name;
+~~~mysql
+DESC table-name;
+~~~
 
 ## SELECT
 
-### Estrutura Básica:  
-> SELECT columns FROM table-name;  
+### Estrutura Básica:
+~~~mysql
+SELECT columns FROM table-name;  
+~~~
 
 ### WHERE
-> SELECT columns FROM table-name WHERE logic-operation;
+~~~mysql
+SELECT columns FROM table-name WHERE logic-operation;
+~~~
 
 ### BETWEEN
-> SELECT columns FROM table-name WHERE column BETWEEN value1 AND value2;
+~~~mysql
+SELECT columns FROM table-name WHERE column BETWEEN value1 AND value2;
+~~~
 
 ### LIKE
-% para ignorar qualquer valor  
-> SELECT columns FROM table-name WHERE column LIKE '%value%';
+% para ignorar qualquer valor
+~~~mysql
+SELECT columns FROM table-name WHERE column LIKE '%value%';
+~~~
 
 _ para ignorar 1 caractere
-> SELECT columns FROM table-name WHERE column LIKE '_e%';
+~~~mysql
+SELECT columns FROM table-name WHERE column LIKE '_e%';
+~~~
 
 ## UPDATE
 Alterando valores
-> UPDATE table SET colulmn = 'new_value' WHERE column = 'valor';
+~~~mysql
+UPDATE table SET colulmn = 'new_value' WHERE column = 'valor';
+~~~
 
 ## DELETE 
 Deletando registros
-> DELETE FROM table-name WHERE column = 'value';
+~~~mysql
+DELETE FROM table-name WHERE column = 'value';
+~~~
 
 ## DROP
 Apagando tabela
-> DROP TABLE table-name;
+~~~mysql
+DROP TABLE table-name;
+~~~
 
 ## FOREIGN KEY
 ~~~mysql
