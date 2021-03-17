@@ -47,8 +47,9 @@ alter table revista rename column nome to nomeRevista;
 desc revista;
 
 -- adicionando coluna de periodicidade
-alter table revista add column periodicidade int;
+alter table revista add column periodicidade varchar(10);
 select * from revista;
+alter table revista modify periodicidade varchar(10);
 
 -- preenchendo periodicidade de cada registro
 update revista set periodicidade = 'semanal' where idRevista = 1;
