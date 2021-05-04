@@ -110,3 +110,4 @@ select count(media)
 from alunoDisciplina;
  
 -- drop database bd08exercicio1;
+

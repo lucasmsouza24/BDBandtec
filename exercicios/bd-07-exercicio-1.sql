@@ -72,7 +72,7 @@ select aluno.nome, acompanhante.nome, acompanhante.relacao_aluno from aluno, aco
 
 desc aluno;
 -- g) exibindo alunos e seus representantes
-select a.nome, r.nome from aluno as a, aluno as r where a.fk_representante = r.ra;
+select a.nome, r.nome from aluno as a left join aluno as r on a.fk_representante = r.ra;
 
 
 desc projeto;
