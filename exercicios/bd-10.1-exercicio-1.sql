@@ -102,15 +102,20 @@ desc avaliacao;
 
 SHOW TABLES;
 
--- •	4) Exibir todos os dados de cada tabela criada, separadamente.
+-- •	3) Exibir todos os dados de cada tabela criada, separadamente.
 
 SELECT * FROM aluno;
+
+
 SELECT * FROM grupo;
+
 SELECT * FROM avaliacao;
+
 SELECT * FROM professor;
 
 -- •	5) Exibir os dados dos grupos e os dados de seus respectivos alunos.
-SELECT aluno.nome as 'Aluno', grupo.nome as 'Grupo' FROM grupo inner join aluno on grupo.pk_grupo = aluno.fk_grupo;
+SELECT aluno.nome as 'Aluno', grupo.nome as 'Grupo' FROM grupo 
+inner join aluno on grupo.pk_grupo = aluno.fk_grupo;
 
 -- •	6) Exibir os dados de um determinado grupo e os dados de seus respectivos alunos.
 SELECT aluno.nome as 'Aluno', grupo.nome as 'Grupo' 
@@ -126,7 +131,8 @@ SELECT min(nota) as 'Nota máxima geral', max(nota) 'Nota mínima geral' FROM av
 -- •	9) Exibir a soma das notas dadas aos grupos, no geral.
 SELECT sum(nota) 'Soma das notas' FROM avaliacao;
 
--- 		10)	10.	Exibir os dados dos professores que avaliaram cada grupo, os dados dos grupos, a data e o horário da avaliação.
+-- 		10)	Exibir os dados dos professores que avaliaram 
+-- cada grupo, os dados dos grupos, a data e o horário da avaliação.
 SELECT 
 professor.nome as 'Professor',
 grupo.nome as 'Grupo', 
@@ -137,7 +143,8 @@ FROM professor
 INNER JOIN avaliacao ON professor.pk_prof = avaliacao.fk_prof 
 INNER JOIN grupo ON grupo.pk_grupo = avaliacao.fk_grupo;
 
--- •	11)	Exibir os dados dos professores que avaliaram um determinado grupo, os dados do grupo, a data e o horário da avaliação.
+-- •	11)	Exibir os dados dos professores que avaliaram um 
+-- determinado grupo, os dados do grupo, a data e o horário da avaliação.
 SELECT 
 professor.nome as 'Professor',
 grupo.nome as 'Grupo', 
@@ -156,8 +163,9 @@ INNER JOIN avaliacao ON professor.pk_prof = avaliacao.fk_prof
 INNER JOIN grupo ON grupo.pk_grupo = avaliacao.fk_grupo
 WHERE professor.pk_prof = 10000;	-- Exibindo apenas grupos que foram avaliados pelo professor 10000
 
--- •	13) Exibir os dados dos grupos. Os dados dos alunos correspondentes, os dados dos professores que avaliaram, a data e o horário da avaliação.
-SELECT grupo.*, aluno.*, professor.*, avaliacao.av_data, avaliacao.av_hora 
+-- •	13) Exibir os dados dos grupos. Os dados dos alunos correspondentes,
+--  os dados dos professores que avaliaram, a data e o horário da avaliação.
+SELECT grupo.nome, aluno.nome, professor.*, avaliacao.av_data, avaliacao.av_hora 
 FROM aluno INNER JOIN grupo ON aluno.fk_grupo = pk_grupo
 INNER JOIN avaliacao ON grupo.pk_grupo = avaliacao.fk_grupo
 INNER JOIN professor ON professor.pk_prof = fk_prof;
@@ -165,12 +173,27 @@ INNER JOIN professor ON professor.pk_prof = fk_prof;
 -- 14.	Exibir a quantidade de notas distintas.
 SELECT DISTINCT nota FROM avaliacao;
 
--- 15.	Exibir a identificação do professor (pode ser o fk ou o nome), a média das notas e a soma das notas atribuídas, agrupadas por professor.
-SELECT professor.nome, avg(avaliacao.nota), sum(avaliacao.nota) FROM professor INNER JOIN avaliacao ON professor.pk_prof = avaliacao.fk_prof GROUP BY professor.nome;
+-- 15.	Exibir a identificação do professor (pode ser o fk ou o nome),
+-- a média das notas e a soma das notas atribuídas, agrupadas por professor.
+SELECT professor.nome, avg(avaliacao.nota), sum(avaliacao.nota) 
+FROM professor INNER JOIN avaliacao 
+ON professor.pk_prof = avaliacao.fk_prof GROUP BY professor.nome;
 
+-- 16.	Exibir a identificação do grupo (pode ser o fk ou o nome),
+-- a média das notas e a soma das notas atribuídas, agrupadas por grupo.
+SELECT grupo.nome, avg(nota), sum(nota) FROM grupo 
+INNER JOIN avaliacao ON grupo.pk_grupo = avaliacao.fk_grupo
+GROUP BY grupo.nome;
 
+-- 17.	Exibir a identificação do professor (pode ser o fk ou o nome),
+--  a menor nota e a maior nota atribuída, agrupada por professor.
+SELECT professor.nome, min(nota), max(nota) FROM professor
+INNER JOIN avaliacao ON professor.pk_prof = avaliacao.fk_prof 
+GROUP BY professor.nome;
 
-
-
-
+-- 18.	Exibir a identificação do grupo (pode ser o fk ou o nome),
+--  a menor nota e a maior nota atribuída, agrupada por grupo.
+SELECT grupo.nome, min(nota), max(nota) FROM grupo 
+INNER JOIN avaliacao ON grupo.pk_grupo = avaliacao.fk_grupo 
+GROUP BY grupo.nome;
 
